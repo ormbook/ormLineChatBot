@@ -61,7 +61,7 @@ class LINEBotTiny
 
     public function parseEvents()
     {
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] !== 'xxPOST') {
             http_response_code(405);
             error_log("Method not allowed");
             exit();
