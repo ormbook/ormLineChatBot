@@ -4,7 +4,7 @@ $access_token = 'oGDLUqeIcOWCDs9RfEWqWdIJbg1F6Kv0Y6Of42oqzNd1t5Hgog6R9Xb2/rnO1yr
 //$channelAccessToken = 'oGDLUqeIcOWCDs9RfEWqWdIJbg1F6Kv0Y6Of42oqzNd1t5Hgog6R9Xb2/rnO1yrE6AvVZ7RQag8BwmHVaUJ5wg72R0r82fXAOIbkv0OZcIEHf9U87DsCi6HU5UGHbFsBNaywMlg9KzMW9aaVcMmD3wdB04t89/1O/w1cDnyilFU=';
 //$channelSecret = '1b5542f38282c54fd557332cbb14e26c';
 
-//phpinfo();
+
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -53,17 +53,15 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-//echo $event['replyToken']; exit;
+
 			// Build message to reply back
-			$messages = ['type' => 'text','text' => $text];
-			//$messages['type']='text';
-			//$messages['text'] =$text;
+			//$messages = ['type' => 'text','text' => $text];
+			$messages = ['type' => 'template','altText' => $text,'template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes'],[['type'=>'message','label'=>'no','text'=>'no']]]];
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = ['replyToken' => $replyToken,'messages' => [$messages],];
-			//$data['replyToken']=$replyToken;
-			//$data['messages']= $messages;
 
 /*
 {
