@@ -82,7 +82,7 @@ if (!is_null($events['events'])) {
 
 			//$post = json_encode($data);
 			//$post='{  "replyToken": "'.$replyToken.'","messages":{"type": "text","text": "Hello, world"}}';
-$temp_data='{  "type": "template",  "altText": "this is a confirm template",  "template": {      "type": "confirm",      "text": "Are you sure?",      "actions": [          {            "type": "message",            "label": "Yes",            "text": "yes"          },          {            "type": "message",            "label": "No",            "text": "no"          }      ]  }}';
+$temp_data='{"type": "template","altText": "this is a confirm template","template": {"type": "confirm","text": "Are you sure?","actions": [{"type": "message","label": "Yes","text": "yes"},{"type": "message","label": "No","text": "no"}]}}';
 $post='{  "replyToken": "'.$replyToken.'","messages":"'.$temp_data.'"}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
