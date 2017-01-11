@@ -65,14 +65,14 @@ $action['type']='message';
 $action['label']='yes';
 $action['text']='yes';
 
-/*$action['type']='message';
-$action['label']='no';
-$action['text']='no';
-*/
+$action2['type']='message';
+$action2['label']='no';
+$action2['text']='no';
+
 
 $m['type']='confirm';
 $m['text']='Are you sure?';
-$m['actions']=$action;
+$m['actions']=array($action,$action2);
 
 
 $messages3['type'] = 'template';
