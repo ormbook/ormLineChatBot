@@ -61,10 +61,27 @@ if (!is_null($events['events'])) {
 			$messages2['packageId']=1;
 			$messages2['stickerId']=1;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
+$action['type'][]='message';
+$action['label'][]='yes';
+$action['text'][]='yes';
 
+$action['type'][]='message';
+$action['label'][]='no';
+$action['text'][]='no';
+
+
+$m['type']='confirm';
+$m['text']='Are you sure?';
+$m['actions']=$action;
+
+
+$messages3['type'] = 'template';
+$messages3['altText'] ='check in mobile';
+$messages3['template']=$m;
+			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2]];
+			$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2,$messages3]];
 
 /*
 {
