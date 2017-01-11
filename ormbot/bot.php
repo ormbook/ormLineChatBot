@@ -56,7 +56,8 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages1 = ['type' => 'text','text' => $text];	
-			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+			$messages2=array('type'==>'sticker','packageId' => 1,'stickerId'=>1);
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -80,10 +81,8 @@ if (!is_null($events['events'])) {
 }
 */
 
-			//$post = json_encode($data);
+			$post = json_encode($data);
 			//$post='{  "replyToken": "'.$replyToken.'","messages":{"type": "text","text": "Hello, world"}}';
-$temp_data='{"type": "template","altText": "this is a confirm template","template": {"type": "confirm","text": "Are you sure?","actions": [{"type": "message","label": "Yes","text": "yes"},{"type": "message","label": "No","text": "no"}]}}';
-$post='{  "replyToken": "'.$replyToken.'","messages":"'.$temp_data.'"}';
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
