@@ -61,14 +61,14 @@ if (!is_null($events['events'])) {
 			$messages2['packageId']=1;
 			$messages2['stickerId']=1;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
-$action['type'][0]='message';
-$action['label'][0]='yes';
-$action['text'][0]='yes';
+$action['type']='message';
+$action['label']='yes';
+$action['text']='yes';
 
-$action['type'][1]='message';
-$action['label'][1]='no';
-$action['text'][1]='no';
-
+/*$action['type']='message';
+$action['label']='no';
+$action['text']='no';
+*/
 
 $m['type']='confirm';
 $m['text']='Are you sure?';
