@@ -57,7 +57,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages1 = ['type' => 'text','text' => $text];	
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-			$messages2=array('type'==>'sticker','packageId' => 1,'stickerId'=>1);
+			$messages2['type']='sticker';
+			$messages2['packageId']=1;
+			$messages2['stickerId']=1;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
 
 			// Make a POST Request to Messaging API to reply to sender
