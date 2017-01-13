@@ -46,13 +46,13 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$messages1 = ['type' => 'text','text' => $text];	
+			//$messages1 = ['type' => 'text','text' => $text];	
 			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 			$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
 			foreach( $event as $key => $value ){
     				$txt.= $key."\t=>\t".$value."\n";
 				}
-			$messages4 = ['type' => 'text','text' => $text."\r\n".$txt];
+			$messages1 = ['type' => 'text','text' => $text."\r\n".$txt];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2,$messages3]];
