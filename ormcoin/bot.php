@@ -1,6 +1,5 @@
 <?php
-phpinfo();
-$access_token = 'D2bITFB6TT3YzmBk2eZl9x8wU8/+rnY5vawunstAKo89PSpyuCNmz69vIUyluxKceyoiOBAg6TtPhNV+zXA3h0ujfceZXz+6cZDFXu1Ac08PX4eXyVMvCXgHs0etU1IJaOiduXlAeEWKmvwwE9fk/QdB04t89/1O/w1cDnyilFU=';
+$access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormcoin'];
 // Get POST body content
 $content = file_get_contents('php://input');
 //$content='{  "events": [    {      "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",      "type": "message",      "timestamp": 1462629479859,      "source": {        "type": "user",        "userId": "U206d25c2ea6bd87c17655609a1c37cb8"      },      "message": {        "id": "325708",        "type": "text",        "text": "Hello, world"      }    },    {      "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",      "type": "follow",      "timestamp": 1462629479859,      "source": {        "type": "user",        "userId": "U206d25c2ea6bd87c17655609a1c37cb8"      }    }  ]}';
