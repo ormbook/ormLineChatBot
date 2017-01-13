@@ -59,7 +59,7 @@ if (!is_null($events['events'])) {
 			$pictureUrl=$arrProfile['pictureUrl'];
 			$pictureUrlsmall=$arrProfile['pictureUrl']."/small";
 			//$arrProfile["statusMessage"];
-			$txt="Hello สบายดีนะ ".$arrProfile;
+			$txt="Hello สบายดีนะ ".$name;
 			$messages1 =['type' => 'text','text' => $text."\r\n".$txt];
 			//$messages3=['type' => 'image','originalContentUrl' => $pictureUrl , 'previewImageUrl'=> $pictureUrlsmall ];
 				
