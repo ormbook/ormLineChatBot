@@ -47,24 +47,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			$messages1 = ['type' => 'text','text' => $text];	
-			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-			$messages2['type']='sticker';
-			$messages2['packageId']=1;
-			$messages2['stickerId']=1;
-			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
-$action['type']='message';
-$action['label']='yes';
-$action['text']='yes';
-$action2['type']='message';
-$action2['label']='no';
-$action2['text']='no';
-$m['type']='confirm';
-$m['text']='Are you sure?';
-$m['actions']=array($action,$action2);
-$messages3['type'] = 'template';
-$messages3['altText'] ='check in mobile';
-$messages3['template']=$m;
-			
+			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+			$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
+			foreach( $event as $key => $value ){
+    				$txt.= $key."\t=>\t".$value."\n";
+				}
+			$messages4 = ['type' => 'text','text' => $text."\r\n".$txt];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2,$messages3]];
