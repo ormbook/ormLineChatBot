@@ -55,11 +55,11 @@ if (!is_null($events['events'])) {
 				$messages2['stickerId']=2;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
 				$action['type']='message';
-				$action['label']='true';
-				$action['text']='true';
+				$action['label']='ใช่';
+				$action['text']='Yes';
 				$action2['type']='message';
-				$action2['label']='false';
-				$action2['text']='false';
+				$action2['label']='ไม่ใช่แน่ๆ';
+				$action2['text']='No';
 				$m['type']='confirm';
 				$m['text']='ขอตอบว่า?';
 				$m['actions']=array($action,$action2);
@@ -67,8 +67,8 @@ if (!is_null($events['events'])) {
 				$messages3['altText'] ='check in mobile';
 				$messages3['template']=$m;
 					
-				case "true" : 
-				$messages1 = ['type' => 'text','text' => "True เป็นคำตอบที่....ที่..."];			
+				case "Yes" : 
+				$messages1 = ['type' => 'text','text' => "ใช่ เป็นคำตอบที่....ที่..."];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages2['type']='sticker';
 				$messages2['packageId']=1;
@@ -76,8 +76,8 @@ if (!is_null($events['events'])) {
 				
 				$messages3 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
 
-				case "false" : 
-				$messages1 = ['type' => 'text','text' => "False เป็นคำตอบที่....ที่..."];			
+				case "No" : 
+				$messages1 = ['type' => 'text','text' => "ตอบมาว่า ไม่ใช่ เป็นคำตอบที่....ที่..."];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages2['type']='sticker';
 				$messages2['packageId']=1;
