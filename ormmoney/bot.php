@@ -53,7 +53,7 @@ if (!is_null($events['events'])) {
 			//$txt=json_encode($event);
 			$userId=$event['source']['userId'];
 			
-			$arrProfile=fn_profile($userId);
+			$arrProfile=json_encode(fn_profile($userId));
 			$name=$arrProfile["displayName"];
 			//$arrProfile["userId"];
 			$pictureUrl=$arrProfile["pictureUrl"];
