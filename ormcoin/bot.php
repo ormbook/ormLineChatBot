@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
 				$rndint1=rand(1, 20);
 				$rndint2=rand(1, 20);
 				$rndint3=rand(1, 20);	
-				$messages1 = ['type' => 'text','text' => $text];
+				$messages1 = ['type' => 'text','text' => 'XP:'.$rndint1];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
 				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
 					
