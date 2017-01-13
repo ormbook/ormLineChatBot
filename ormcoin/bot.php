@@ -89,9 +89,9 @@ if (!is_null($events['events'])) {
 				break;
 					
 				default :
-				$rndint1=rand(1, 40);
-				$rndint2=rand(1, 40);
-				$rndint3=rand(1, 40);	
+				$rndint1=rand(1, 15);
+				$rndint2=rand(1, 15);
+				$rndint3=rand(1, 15);	
 				$messages1 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint1 ];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
 				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
