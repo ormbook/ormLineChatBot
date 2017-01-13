@@ -52,7 +52,7 @@ if (!is_null($events['events'])) {
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages2['type']='sticker';
 				$messages2['packageId']=1;
-				$messages2['stickerId']=2;
+				$messages2['stickerId']=4;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
 				$action['type']='message';
 				$action['label']='ใช่';
@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages2['type']='sticker';
 				$messages2['packageId']=1;
-				$messages2['stickerId']=3;
+				$messages2['stickerId']=2;
 				
 				$messages3 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
 				break;
@@ -83,7 +83,7 @@ if (!is_null($events['events'])) {
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages2['type']='sticker';
 				$messages2['packageId']=1;
-				$messages2['stickerId']=4;
+				$messages2['stickerId']=3;
 				
 				$messages3 = ['type' => 'text','text' => "ผิดนะครับ!! "];
 				break;
