@@ -46,24 +46,49 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$messages1 = ['type' => 'text','text' => $text];	
+			switch($text){
+				case "quiz" : case "Quiz":
+				$messages1 = ['type' => 'text','text' => "ดาวอังคารมีดาวบริวาร 2 ดวง คือ โฟบอส กับ ดีมอส ? \r\n * "];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-			$messages2['type']='sticker';
-			$messages2['packageId']=1;
-			$messages2['stickerId']=1;
+				$messages2['type']='sticker';
+				$messages2['packageId']=1;
+				$messages2['stickerId']=2;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
-$action['type']='message';
-$action['label']='yes';
-$action['text']='yes';
-$action2['type']='message';
-$action2['label']='no';
-$action2['text']='no';
-$m['type']='confirm';
-$m['text']='Are you sure?';
-$m['actions']=array($action,$action2);
-$messages3['type'] = 'template';
-$messages3['altText'] ='check in mobile';
-$messages3['template']=$m;
+				$action['type']='message';
+				$action['label']='true';
+				$action['text']='true';
+				$action2['type']='message';
+				$action2['label']='false';
+				$action2['text']='false';
+				$m['type']='confirm';
+				$m['text']='ขอตอบว่า?';
+				$m['actions']=array($action,$action2);
+				$messages3['type'] = 'template';
+				$messages3['altText'] ='check in mobile';
+				$messages3['template']=$m;
+					
+				case "true" : 
+				$messages1 = ['type' => 'text','text' => "True เป็นคำตอบที่....ที่..."];			
+			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+				$messages2['type']='sticker';
+				$messages2['packageId']=1;
+				$messages2['stickerId']=3;
+				
+				$messages3 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
+
+				case "false" : 
+				$messages1 = ['type' => 'text','text' => "False เป็นคำตอบที่....ที่..."];			
+			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+				$messages2['type']='sticker';
+				$messages2['packageId']=1;
+				$messages2['stickerId']=4;
+				
+				$messages3 = ['type' => 'text','text' => "ผิดนะครับ!! "];
+			}
+			
+
+			
+
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
