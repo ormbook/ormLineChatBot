@@ -53,11 +53,11 @@ if (!is_null($events['events'])) {
 			//$txt=json_encode($event);
 			$userId=$event['source']['userId'];
 			
-			$arrProfile=json_encode(fn_profile($userId));
-			$name=$arrProfile["displayName"];
+			$arrProfile=fn_profile($userId);
+			$name=$arrProfile['displayName'];
 			//$arrProfile["userId"];
-			$pictureUrl=$arrProfile["pictureUrl"];
-			$pictureUrlsmall=$arrProfile["pictureUrl"]."/small";
+			$pictureUrl=$arrProfile['pictureUrl'];
+			$pictureUrlsmall=$arrProfile['pictureUrl']."/small";
 			//$arrProfile["statusMessage"];
 			$txt="Hello สบายดีนะ ".$arrProfile;
 			$messages1 =['type' => 'text','text' => $text."\r\n".$txt];
