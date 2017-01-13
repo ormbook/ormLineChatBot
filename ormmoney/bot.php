@@ -49,7 +49,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			//$messages1 = ['type' => 'text','text' => $text];	
 			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
+			$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
 			//$txt=json_encode($event);
 			$userId=$event['source']['userId'];
 			
@@ -61,7 +61,7 @@ if (!is_null($events['events'])) {
 			//$arrProfile["statusMessage"];
 			$txt="Hello สบายดีนะ ".$name;
 			$messages1 =['type' => 'text','text' => $text."\r\n".$txt];
-			$messages3=['type' => 'image','originalContentUrl' => $pictureUrl , 'previewImageUrl'=> $pictureUrlsmall ];
+			//$messages3=['type' => 'image','originalContentUrl' => $pictureUrl , 'previewImageUrl'=> $pictureUrlsmall ];
 				
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
