@@ -66,6 +66,7 @@ if (!is_null($events['events'])) {
 				$messages3['type'] = 'template';
 				$messages3['altText'] ='check in mobile';
 				$messages3['template']=$m;
+				break;
 					
 				case "Yes" : 
 				$messages1 = ['type' => 'text','text' => "ใช่ เป็นคำตอบที่....ที่..."];			
@@ -75,6 +76,7 @@ if (!is_null($events['events'])) {
 				$messages2['stickerId']=3;
 				
 				$messages3 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
+				break;
 
 				case "No" : 
 				$messages1 = ['type' => 'text','text' => "ตอบมาว่า ไม่ใช่ เป็นคำตอบที่....ที่..."];			
@@ -84,6 +86,16 @@ if (!is_null($events['events'])) {
 				$messages2['stickerId']=4;
 				
 				$messages3 = ['type' => 'text','text' => "ผิดนะครับ!! "];
+				break;
+					
+				default :
+				$rndint1=rand(1, 40);
+				$rndint2=rand(1, 40);
+				$rndint3=rand(1, 40);	
+				$messages1 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint1 ];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
+				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
+					
 			}
 			
 
