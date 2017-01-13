@@ -1,5 +1,5 @@
 <?php
-$access_token = 'FB/on3LbJAJR/y4lLP2Xr2Hb7tFtdIAJhlg/+dD6dZWmSbkG8gWGAeGAlITTUs2PPquo70uO27P29wFKRGsTaTDQ+ZoguddbV+KaqWirgRGwBNjQkVXmztECOGgjkU61kTkVw7TI6U9+SQvL43P0BQdB04t89/1O/w1cDnyilFU=';
+$access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormpay'];
 
 // Get POST body content
 $content = file_get_contents('php://input');
