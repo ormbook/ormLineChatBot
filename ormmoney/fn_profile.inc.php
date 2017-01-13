@@ -13,7 +13,9 @@ curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $result = curl_exec($ch);
 curl_close($ch);
   $arrProfile=json_decode($result);
-return $arrProfile;
+//return $arrProfile;
+  return $result;
+  
   /*
   $arrProfile=fn_profile($userId);
   $arrProfile["displayName"];
