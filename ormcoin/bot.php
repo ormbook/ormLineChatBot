@@ -50,9 +50,9 @@ if (!is_null($events['events'])) {
 				case "quiz" : case "Quiz":
 				$messages1 = ['type' => 'text','text' => "ดาวอังคารมีดาวบริวาร 2 ดวง คือ โฟบอส กับ ดีมอส ? \r\n * "];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-				$messages2['type']='sticker';
-				$messages2['packageId']=1;
-				$messages2['stickerId']=4;
+				$messages3['type']='sticker';
+				$messages3['packageId']=1;
+				$messages3['stickerId']=4;
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>['type'=>'message','label'=>'yes','text'=>'yes']]];
 				$action['type']='message';
 				$action['label']='ใช่';
@@ -63,36 +63,36 @@ if (!is_null($events['events'])) {
 				$m['type']='confirm';
 				$m['text']='ขอตอบว่า?';
 				$m['actions']=array($action,$action2);
-				$messages3['type'] = 'template';
-				$messages3['altText'] ='check in mobile';
-				$messages3['template']=$m;
+				$messages2['type'] = 'template';
+				$messages2['altText'] ='check in mobile';
+				$messages2['template']=$m;
 				break;
 					
 				case "Yes" : 
 				$messages1 = ['type' => 'text','text' => "ใช่ เป็นคำตอบที่....ที่..."];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-				$messages2['type']='sticker';
-				$messages2['packageId']=1;
-				$messages2['stickerId']=2;
+				$messages3['type']='sticker';
+				$messages3['packageId']=1;
+				$messages3['stickerId']=2;
 				
-				$messages3 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
+				$messages2 = ['type' => 'text','text' => "ถูกต้องนะครับ "];
 				break;
 
 				case "No" : 
 				$messages1 = ['type' => 'text','text' => "ตอบมาว่า ไม่ใช่ เป็นคำตอบที่....ที่..."];			
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-				$messages2['type']='sticker';
-				$messages2['packageId']=1;
-				$messages2['stickerId']=3;
+				$messages3['type']='sticker';
+				$messages3['packageId']=1;
+				$messages3['stickerId']=3;
 				
-				$messages3 = ['type' => 'text','text' => "ผิดนะครับ!! "];
+				$messages2 = ['type' => 'text','text' => "ผิดนะครับ!! "];
 				break;
 					
 				default :
-				$rndint1=rand(1, 15);
-				$rndint2=rand(1, 15);
-				$rndint3=rand(1, 15);	
-				$messages1 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint1 ];
+				$rndint1=rand(1, 20);
+				$rndint2=rand(1, 20);
+				$rndint3=rand(1, 20);	
+				$messages1 = ['type' => 'text','text' => $text];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
 				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
 					
