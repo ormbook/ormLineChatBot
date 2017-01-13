@@ -95,7 +95,15 @@ if (!is_null($events['events'])) {
 				$messages1 = ['type' => 'text','text' => 'XP:'.$rndint1];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
 				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
-					
+				
+				case "Bal" : case "Balance" : case "balance" : 
+				$messages1 = ['type' => 'text','text' => "ormCoin : 123,456"];			
+				//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+				$messages3['type']='sticker';
+				$messages3['packageId']=1;
+				$messages3['stickerId']=12;
+								
+				break;
 			}
 			
 
