@@ -1,3 +1,3 @@
 <?php
-$access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormmoney'];
+$access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormpay'];
 ?>
