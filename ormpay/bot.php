@@ -46,22 +46,26 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-			// Build message to reply back
-			//$messages1 = ['type' => 'text','text' => $text];	
-			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-			$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
-			//$txt=json_encode($event);
-			$userId=$event['source']['userId'];
-			
+			//get Name
+			$userId=$event['source']['userId'];	
 			$arrProfile=fn_profile($userId);
 			$name=$arrProfile['displayName'];
 			//$arrProfile["userId"];
-			$pictureUrl=$arrProfile['pictureUrl'];
-			$pictureUrlsmall=$arrProfile['pictureUrl']."/small";
-			//$arrProfile["statusMessage"];
-			$txt="Hello สบายดีนะ ".$name;
-			$messages1 =['type' => 'text','text' => $text."\r\n".$txt];
+			//$pictureUrl=$arrProfile['pictureUrl'];
+			//$pictureUrlsmall=$arrProfile['pictureUrl']."/small";
+			
+			// Build message to reply back
+			//$messages1 = ['type' => 'text','text' => $text];	
 			//$messages3=['type' => 'image','originalContentUrl' => $pictureUrl , 'previewImageUrl'=> $pictureUrlsmall ];
+			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
+			//$txt="Hello สบายดีนะ ".$name;
+			$messages1 =['type' => 'text','text' => $text."\r\n".$txt];
+			//$messages=fn_response($text);
+			
+			
+
+			
 				
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
