@@ -63,7 +63,7 @@ if (!is_null($events['events'])) {
 			$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
 			//$messages=fn_response($text);
 			
-			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://www.billpay.de/wp-content/uploads/2016/05/billpay-logo-2c.png','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
 			
 
 			
