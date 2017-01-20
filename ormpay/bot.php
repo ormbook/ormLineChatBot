@@ -116,17 +116,17 @@ if (!is_null($events['events'])) {
 			if($action=="pay"){
 			switch($vendor){
 				case "elec":
-				$messages1 =['type' => 'text','text' =>" ".$name." จะจ่ายค่าไฟเหรอ สบายๆ มาเลย \r\n"];
+				$messages1 =['type' => 'text','text' =>" จะจ่ายค่าไฟเหรอ สบายๆ มาเลย \r\n"];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>5 ];
 				break;
 
 				case "water":
-				$messages1 =['type' => 'text','text' =>" ".$name." จะจ่ายน้ำ ชิวๆ จ่ายได้เลย \r\n"];
+				$messages1 =['type' => 'text','text' =>"  จะจ่ายน้ำ ชิวๆ จ่ายได้เลย \r\n"];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>6 ];
 				break;
 					
 				default:
-				$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n"];
+				$messages1 =['type' => 'text','text' => $postbackdata."  \r\n"];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>7 ];
 				break;
 			}//end switch
