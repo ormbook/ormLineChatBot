@@ -63,7 +63,7 @@ if (!is_null($events['events'])) {
 			$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
 			//$messages=fn_response($text);
 			
-			//$messages1=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
 			
 
 			
@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			//$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2,$messages3]];
-			$data = ['replyToken' => $replyToken,'messages' => [$messages1]];
+			$data = ['replyToken' => $replyToken,'messages' => [$messages1,$messages2]];
 /*
 {
   "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
