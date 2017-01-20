@@ -86,7 +86,7 @@ if (!is_null($events['events'])) {
 			switch($text){
 				case "pay": case "Pay": case "PAY": 
 				case "menu": case "Menu": case "MENU":
-				$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];	
+				$messages1 =['type' => 'text','text' => " ".$name." มาจ่ายบิลกันเถอะ \r\n"];	
 				$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://ormlinebot.herokuapp.com/ormpay/ormPay-logo.PNG','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vendor=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vendor=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vendor=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบัตรเครดิต','data'=>'action=pay&vendor=creditcard']]]];
 				break;
 
