@@ -91,11 +91,12 @@ if (!is_null($events['events'])) {
 			//$txt="Hello สบายดีนะ ".$name;
 			$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
 			//$messages=fn_response($text);			
-			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://ormlinebot.herokuapp.com/ormpay/ormPay-logo.PNG','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://ormlinebot.herokuapp.com/ormpay/ormPay-logo.PNG','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
 		
 		}else if ($event['type'] == 'postback' ) {
+			$replyToken = $event['replyToken'];
 			$postbackdata=$event['postback']['data'];
-			$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n".$txt];
+			$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n"];
 			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 		}
 				
