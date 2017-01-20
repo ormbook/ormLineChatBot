@@ -138,7 +138,7 @@ if (!is_null($events['events'])) {
 				break;
 					
 				default:
-				$messages1 =['type' => 'text','text' => $postbackdata."  \r\n"];
+				$messages1 =['type' => 'text','text' => " จ่าย ".$vendor."  \r\n"];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>7 ];
 				break;
 			}//end switch
