@@ -98,7 +98,7 @@ if (!is_null($events['events'])) {
 			$postbackdata=$event['postback']['data'];
 			$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n"];
 			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
-		}
+		}//end if
 				
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -117,7 +117,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "\r\n";
-		}//end if
+		
 	}//foreach
 }//end if
 echo "OK";
