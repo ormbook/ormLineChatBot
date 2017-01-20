@@ -64,6 +64,7 @@ $events = json_decode($content, true);
   }
 }
 https://devdocs.line.me/en/#webhook-event-object
+http://sandbox.onlinephpfunctions.com/
 */
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
@@ -94,10 +95,19 @@ if (!is_null($events['events'])) {
 				$messages1 =['type' => 'text','text' => " สวัสดี ".$name." \r\n สั่งงานเราได้นะ \r\n pay : จ่ายบิล \r\n bal : เช็คยอดในบัญชี \r\n อื่นๆ รอเราอัพเดทให้นะ"];	
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>4 ];
 				break;
+				
+				case "hi": case "Hi": case "Hello":  
+				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n สบายดีนะ จ่ายบิลบอกเราได้นะ "];		
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>10 ];
+				
+				case "bal": case "Bal": case "balance":  case "Balance":  
+				$messages1 =['type' => 'text','text' => "Asset ".$name." \r\n Cash : 1,000 บาท \r\n Mutual Fund : 20,000 หน่วย "];		
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>12 ];
 					
 				default :
 				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n เรียกเมนู พิมพ์คำว่า Menu ได้นะ \r\n ถ้าคิดอะไรไม่ออก พิมพ์ help ดูสิ"];		
-				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>3 ];
+				$intRand=rand(1,25);
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$intRand ];
 				break;
 			
 			// Build message to reply back
@@ -122,7 +132,7 @@ if (!is_null($events['events'])) {
 
 				case "water":
 				$messages1 =['type' => 'text','text' =>"  จะจ่ายน้ำ ชิวๆ จ่ายได้เลย \r\n"];
-				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>6 ];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>8 ];
 				break;
 					
 				default:
