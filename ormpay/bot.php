@@ -83,21 +83,43 @@ if (!is_null($events['events'])) {
 			//$pictureUrl=$arrProfile['pictureUrl'];
 			//$pictureUrlsmall=$arrProfile['pictureUrl']."/small";
 			
+			switch($text){
+				case "pay": case "Pay": case "PAY": 
+				case "menu": case "Menu": case "MENU":
+				$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];	
+				$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://ormlinebot.herokuapp.com/ormpay/ormPay-logo.PNG','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+				break;
+					
+				default :
+				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n เรียกเมนู พิมพ์คำว่า Menu ได้นะ"];		
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>3 ];
+				break;
+			
 			// Build message to reply back
 			//$messages1 = ['type' => 'text','text' => $text];	
 			//$messages3=['type' => 'image','originalContentUrl' => $pictureUrl , 'previewImageUrl'=> $pictureUrlsmall ];
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
 			//$txt="Hello สบายดีนะ ".$name;
-			$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
+			
 			//$messages=fn_response($text);			
-			$messages2=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'https://ormlinebot.herokuapp.com/ormpay/ormPay-logo.PNG','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
-		
+			
+			}//end switch
 		}else if ($event['type'] == 'postback' ) {
 			$replyToken = $event['replyToken'];
-			$postbackdata=$event['postback']['data'];
-			$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n"];
-			$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+			$postbackdata=parse_str($event['postback']['data']);//&action=pay&vender=elec
+			if($postbackdata['action']=="pay"){
+			switch($postbackdata['vender']){
+				case "elec":
+				$messages1 =['type' => 'text','text' =>" ".$name." จะจ่ายค่าไฟเหรอ สบายๆ มาเลย \r\n"];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+					
+				default:
+				$messages1 =['type' => 'text','text' => $postbackdata." ".$name." \r\n"];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+				break;
+			}//end switch
+			}//end if
 		}//end if
 				
 			// Make a POST Request to Messaging API to reply to sender
