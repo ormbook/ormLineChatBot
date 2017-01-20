@@ -99,10 +99,12 @@ if (!is_null($events['events'])) {
 				case "hi": case "Hi": case "Hello":  
 				$messages1 =['type' => 'text','text' => $text." ".$name." \r\n สบายดีนะ จ่ายบิลบอกเราได้นะ "];		
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>11 ];
-				
+				break;
+					
 				case "bal": case "Bal": case "balance":  case "Balance":  
 				$messages1 =['type' => 'text','text' => "Asset ".$name." \r\n Cash : 1,000 บาท \r\n Mutual Fund : 20,000 หน่วย "];		
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>12 ];
+				break;
 					
 				default :
 				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n เรียกเมนู พิมพ์คำว่า Menu ได้นะ \r\n ถ้าคิดอะไรไม่ออก พิมพ์ help ดูสิ"];		
