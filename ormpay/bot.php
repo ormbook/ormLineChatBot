@@ -98,7 +98,7 @@ if (!is_null($events['events'])) {
 				
 				case "hi": case "Hi": case "Hello":  
 				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n สบายดีนะ จ่ายบิลบอกเราได้นะ "];		
-				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>10 ];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>11 ];
 				
 				case "bal": case "Bal": case "balance":  case "Balance":  
 				$messages1 =['type' => 'text','text' => "Asset ".$name." \r\n Cash : 1,000 บาท \r\n Mutual Fund : 20,000 หน่วย "];		
