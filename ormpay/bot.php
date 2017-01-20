@@ -60,10 +60,11 @@ if (!is_null($events['events'])) {
 			//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 			//$messages3 = ['type' => 'template','altText' => 'ohno','template'=> ['type'=>'confirm','text'=>'Are you sure?','actions'=>[['type'=>'message','label'=>'yes','text'=>'yes_q1'],['type'=>'message','label'=>'no','text'=>'no_q1']]]];
 			//$txt="Hello สบายดีนะ ".$name;
-			//$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
+			$messages1 =['type' => 'text','text' => $text." ".$name." \r\n".$txt];
 			//$messages=fn_response($text);
 			
-			$messages1=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+			//$messages1=['type' => 'template','altText' => 'Menu','template'=> ['type'=>'buttons','thumbnailImageUrl'=>'','title'=>'เมนู','text'=>'เลือกรายการจ่าย?','actions'=>[['type'=>'postback','label'=>'จ่าย:ค่าไฟ','data'=>'action=pay&vender=elec'],['type'=>'postback','label'=>'จ่าย:ค่าน้ำ','data'=>'action=pay&vender=water'],['type'=>'postback','label'=>'จ่าย:ค่าโทรศัพท์','data'=>'action=pay&vender=AIS'],['type'=>'postback','label'=>'จ่าย:ค่าบิัตรเครดิต','data'=>'action=pay&vender=creditcard']]]];
+			
 
 			
 				
