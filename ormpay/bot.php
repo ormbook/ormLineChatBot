@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 				break;
 				
 				case "hi": case "Hi": case "Hello":  
-				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n สบายดีนะ จ่ายบิลบอกเราได้นะ "];		
+				$messages1 =['type' => 'text','text' => $text." ".$name." \r\n สบายดีนะ จ่ายบิลบอกเราได้นะ "];		
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>11 ];
 				
 				case "bal": case "Bal": case "balance":  case "Balance":  
@@ -106,7 +106,7 @@ if (!is_null($events['events'])) {
 					
 				default :
 				$messages1 =['type' => 'text','text' => "Hi ".$name." \r\n เรียกเมนู พิมพ์คำว่า Menu ได้นะ \r\n ถ้าคิดอะไรไม่ออก พิมพ์ help ดูสิ"];		
-				$intRand=rand(1,25);
+				$intRand=rand(1,20);
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$intRand ];
 				break;
 			
