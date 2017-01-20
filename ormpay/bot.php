@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 				break;
 
 				case "help": case "Help": case "HELP":  
-				$messages1 =['type' => 'text','text' => " สวัสดี ".$name." \r\n สั่งงานเราได้นะ \r\n pay : จ่ายบิล \r\n bal : เช็คยอดในบัญชี \r\n อื่นๆ รอเราอัพเดทให้นะ";	
+				$messages1 =['type' => 'text','text' => " สวัสดี ".$name." \r\n สั่งงานเราได้นะ \r\n pay : จ่ายบิล \r\n bal : เช็คยอดในบัญชี \r\n อื่นๆ รอเราอัพเดทให้นะ"];	
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>4 ];
 				break;
 					
