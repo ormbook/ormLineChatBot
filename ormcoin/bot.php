@@ -90,7 +90,7 @@ if (!is_null($events['events'])) {
 
 				case "Bal" : case "Balance" : case "balance" : 
 				$messages1 = ['type' => 'text','text' => "ormCoin : 123,456"];			
-				//$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
+				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages3['type']='sticker';
 				$messages3['packageId']=1;
 				$messages3['stickerId']=12;
@@ -100,7 +100,7 @@ if (!is_null($events['events'])) {
 				case "Me" : case "me": case "ME":
 				$userId=$event['source']['userId'];	
 				$arrProfile=fn_profile($userId);	
-				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl],'previewImageUrl'=>'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
+				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl], 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
 				$messages2 = ['type' => 'text','text' => 'Hello:'.$arrProfile[displayName]];
 				$messages3 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
 				break;
