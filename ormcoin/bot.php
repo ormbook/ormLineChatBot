@@ -96,6 +96,13 @@ if (!is_null($events['events'])) {
 				$messages3['stickerId']=12;
 								
 				break;
+				
+				case "Me" : case "me": case "ME":
+				$userId=$event['source']['userId'];	
+				$arrProfile=fn_profile($userId);	
+				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl],'previewImageUrl'=>'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
+				$messages2 = ['type' => 'text','text' => 'Hello:'.$arrProfile[displayName]];
+				$messages2 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
 					
 				default :
 				$rndint1=rand(1, 20);
@@ -148,4 +155,32 @@ if (!is_null($events['events'])) {
 	}//foreach
 }//end if
 echo "OK";
+
+
+?>
+<?php
+function fn_profile($userId){
+  global $access_token;
+//$url = 'https://api.line.me/v1/profile';
+$url="https://api.line.me/v2/bot/profile/".$userId;
+$headers = array('Authorization: Bearer ' . $access_token);
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+$result = curl_exec($ch);
+curl_close($ch);
+  $arrProfile=json_decode($result,true);
+  return $arrProfile;
+  //return $result;
+  
+  /*
+  $arrProfile=fn_profile($userId);
+  $arrProfile["displayName"];
+  $arrProfile["userId"];
+  $arrProfile["pictureUrl"];
+  $arrProfile["statusMessage"];
+  */
+  
+}
 ?>
