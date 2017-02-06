@@ -102,7 +102,7 @@ if (!is_null($events['events'])) {
 				$arrProfile=fn_profile($userId);	
 				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl],'previewImageUrl'=>'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
 				$messages2 = ['type' => 'text','text' => 'Hello:'.$arrProfile[displayName]];
-				$messages2 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
+				$messages3 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
 				break;
 					
 				default :
