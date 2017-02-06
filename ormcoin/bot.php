@@ -88,7 +88,7 @@ if (!is_null($events['events'])) {
 				$messages2 = ['type' => 'text','text' => "ผิดนะครับ!! "];
 				break;
 
-				case "Bal" : case "Balance" : case "balance" : 
+				case "Bal" :  
 				$messages1 = ['type' => 'text','text' => "ormCoin : 123,456"];			
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>1 ];
 				$messages3['type']='sticker';
@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 								
 				break;
 				
-				case "Me" : case "me": case "ME":
+				case "Me" :  
 				$userId=$event['source']['userId'];	
 				$arrProfile=fn_profile($userId);	
 				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl], 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
