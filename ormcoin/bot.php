@@ -130,8 +130,8 @@ if (!is_null($events['events'])) {
 	
 				$messages1['type']='image';
 				//$messages1['originalContentUrl']=$arrProfile[pictureUrl];
-				$messages1['originalContentUrl']='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png';
-				$messages1['previewImageUrl']='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png';
+				$messages1['originalContentUrl']='https://obs.line-apps.com/'.$userId.'/large';
+				$messages1['previewImageUrl']='https://obs.line-apps.com/'.$userId.'/small';
 				$messages2 = ['type' => 'text','text' => 'Hello:'.$arrProfile[displayName]];
 				$messages3 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
 				break;
