@@ -1,6 +1,7 @@
 <?php
 function fn_profile($userId){
   global $access_token;
+	$access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormcoin'];
 //$url = 'https://api.line.me/v1/profile';
 $url="https://api.line.me/v2/bot/profile/".$userId;
 $headers = array('Authorization: Bearer ' . $access_token);
@@ -23,8 +24,7 @@ curl_close($ch);
   */
   
 }
-?>
-<?php
+
 $access_token = $_SERVER['CHANNEL_ACCESS_TOKEN_ormcoin'];
 // Get POST body content
 $content = file_get_contents('php://input');
