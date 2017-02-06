@@ -45,6 +45,9 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			$userId=$event['source']['userId'];	
+			$arrProfile=fn_profile($userId);
+			
 			// Build message to reply back
 			switch($text){
 				case "quiz" : case "Quiz":
@@ -98,8 +101,7 @@ if (!is_null($events['events'])) {
 				break;
 				
 				case "Me" :  
-				$userId=$event['source']['userId'];	
-				$arrProfile=fn_profile($userId);	
+	
 				$messages1['type']='image';
 				$messages1['originalContentUrl']=$arrProfile[pictureUrl];
 				$messages1['previewImageUrl']='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png';
@@ -108,20 +110,14 @@ if (!is_null($events['events'])) {
 				break;
 					
 				default :
-				/*$rndint1=rand(1, 20);
+				$rndint1=rand(1, 20);
 				$rndint2=rand(1, 20);
 				$rndint3=rand(1, 20);	
-				$messages1 = ['type' => 'text','text' => 'XP:'.json_encode($event)];
+				$messages1 = ['type' => 'text','text' => 'XP:'.json_encode($event).json_encode($arrProfile)];
 				$messages2 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint2 ];
 				$messages3 = ['type' => 'sticker','packageId' => 1,'stickerId'=>$rndint3 ];
 				break;
-				*/
-				$userId=$event['source']['userId'];	
-				$arrProfile=fn_profile($userId);	
-				$messages1 = ['type' => 'image','originalContentUrl' => $arrProfile[pictureUrl], 'previewImageUrl' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Creative-Tail-Objects-mirror.svg/200px-Creative-Tail-Objects-mirror.svg.png'];
-				$messages2 = ['type' => 'text','text' => 'Hello:'.$arrProfile[displayName]];
-				$messages3 = ['type' => 'text','text' => ''.$arrProfile[statusMessage]];
-				break;
+
 					
 
 			}
