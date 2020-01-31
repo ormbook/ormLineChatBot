@@ -1,5 +1,5 @@
 <?php
-$access_token = 'oGDLUqeIcOWCDs9RfEWqWdIJbg1F6Kv0Y6Of42oqzNd1t5Hgog6R9Xb2/rnO1yrE6AvVZ7RQag8BwmHVaUJ5wg72R0r82fXAOIbkv0OZcIEHf9U87DsCi6HU5UGHbFsBNaywMlg9KzMW9aaVcMmD3wdB04t89/1O/w1cDnyilFU=';
+$access_token = 'PN1T8nvVqM8SiDBpr6RX/GtlLoHYFQQ6P/dml+03M1ZMtB3Xw8g1aLJvOlXNAB4A0pUNrDMJhAcwfhEwiJdCHwzd0QCv/qwldt88hndvWQ+Gm3+yYo+bZKYxAaqdDjmeYWktBxk94LgiUfHEB7SGOgdB04t89/1O/w1cDnyilFU=';
 
 //$channelAccessToken = 'oGDLUqeIcOWCDs9RfEWqWdIJbg1F6Kv0Y6Of42oqzNd1t5Hgog6R9Xb2/rnO1yrE6AvVZ7RQag8BwmHVaUJ5wg72R0r82fXAOIbkv0OZcIEHf9U87DsCi6HU5UGHbFsBNaywMlg9KzMW9aaVcMmD3wdB04t89/1O/w1cDnyilFU=';
 //$channelSecret = '1b5542f38282c54fd557332cbb14e26c';
